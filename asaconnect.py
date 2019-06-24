@@ -3,7 +3,7 @@ import re
 show_conn = 'TCP server 172.16.1.101:443 localserver 172.16.66.1:53710,idle 0:01:09,bytes 27575949,flags UIO'
 
 
-conn_info = re.match('(\w*)\s+'                                    #0 连接类型（tcp活着udp）
+conn_info = re.match('(\w*)\s+'                                    #0 连接类型（tcp或者udp）
                      '(\w*)\s+'                                    #1 server
                      '(\d{1,3}\.\d{1,3}\.\d{1,3}\.\d{1,3}:\d*)\s+' #2 目的ip地址以及端口
                      '(\w*)\s+'                                    #3 localserver
