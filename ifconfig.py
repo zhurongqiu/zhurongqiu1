@@ -20,7 +20,7 @@ print(format_string.format('broadcast', broadcast))
 print(format_string.format('mac_addr', mac_addr))
 
 # 产生网关的ip地址
-ipv4_gw = (re.findall('(\d{1,3}\.\d{1,3}\.\d{1,3}\.)', ipv4_add)[0] + '10')
+ipv4_gw = (re.findall('(\d{1,3}\.\d{1,3}\.\d{1,3}\.)', ipv4_add)[0] + '1')
 
 # 打印网关的ip地址
 print('\n我们假设网关ip地址最后一位为1，因此网关ip地址为：' + ipv4_gw + '\n')
