@@ -19,23 +19,21 @@ os.mkdir('qytang5')
 print('文件中包含"qytang"关键字的文件为：')
 print('方案一：')
 for file_or_dir in os.listdir(os.getcwd()):
-
-
-
-
+    if os.path.isfile(file_or_dir):
+        for fileinfo in open(file_or_dir):
+            if'qytang' in fileinfo:
+                print(file_or_dir)
 
 print('方案二：')
-#这是更有的递归方案
+#这是更优的递归方案
 #topdown的作用！
 #True从主目录扫描到子目录
 #False从子目录扫描到主目录
-for root,dirs,files in os.walk(os.getcwd(),topdown=False):
-
-
-
-
-
-
+for root,dirs,files in os.walk(os.getcwd(),topdown=True):
+    for name in files:
+        for fileinfo2 in open(name):
+            if 'qytang' in fileinfo2:
+                print(os.path.join(root,name))
 
 #完成清理工作
 os.chdir('..')
